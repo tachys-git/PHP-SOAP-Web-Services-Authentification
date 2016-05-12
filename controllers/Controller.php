@@ -13,9 +13,9 @@ class Controller {
     public function AuthHeader($Header)   {
 
         if ($Header->username=="1" and $Header->password=="1234") {
-            throw new SoapFault($this->authentication_server_error, $this->authentication_description_error);
+            $this->authenticated = true;
         } else {
-        	$this->authenticated = true;
+         throw new SoapFault($this->authentication_server_error, $this->authentication_description_error);
         }
     }
 
